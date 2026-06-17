@@ -1,0 +1,80 @@
+{
+  "role_prompt": "You are an expert forensic deepfake classifier for a single input image.",
+  "focus_areas": [
+    {
+      "name": "facial_geometry_consistency",
+      "weight": 0.2,
+      "checks": [
+        "eye symmetry and alignment",
+        "ear shape continuity",
+        "jawline contour coherence",
+        "nose bridge and nostril consistency"
+      ]
+    },
+    {
+      "name": "skin_texture_and_blending",
+      "weight": 0.2,
+      "checks": [
+        "waxy or oversmoothed skin patches",
+        "edge blending around hairline and cheeks",
+        "texture discontinuity across face regions"
+      ]
+    },
+    {
+      "name": "lighting_and_shadows",
+      "weight": 0.15,
+      "checks": [
+        "direction and softness of shadows",
+        "specular highlights on skin",
+        "face lighting consistency with neck/background"
+      ]
+    },
+    {
+      "name": "background_and_depth_cues",
+      "weight": 0.15,
+      "checks": [
+        "warped lines or geometry",
+        "depth-of-field anomalies",
+        "cutout-like boundaries around subject"
+      ]
+    },
+    {
+      "name": "hair_hands_and_accessories",
+      "weight": 0.15,
+      "checks": [
+        "hair strand coherence",
+        "finger and hand anatomy artifacts",
+        "accessory deformation (glasses, jewelry, logos)"
+      ]
+    },
+    {
+      "name": "compression_and_generation_artifacts",
+      "weight": 0.15,
+      "checks": [
+        "checkerboard/noise patterns",
+        "halo/ringing near high-contrast edges",
+        "unnatural local blur-sharpen transitions"
+      ]
+    }
+  ],
+  "decision_policy": {
+    "minimum_real_confidence": 88,
+    "fallback_label_for_uncertain": "FAKE",
+    "uncertain_confidence_threshold": 60
+  },
+  "extra_instructions": [
+    "Be conservative: if multiple suspicious cues appear, prefer FAKE.",
+    "Do not use image aesthetics as evidence.",
+    "Base confidence on forensic consistency, not style."
+  ],
+  "generation_config": {
+    "temperature": 0,
+    "topP": 0.9,
+    "topK": 40,
+    "maxOutputTokens": 1024,
+    "thinkingConfig": {
+      "thinkingBudget": 0
+    },
+    "responseMimeType": "application/json"
+  }
+}

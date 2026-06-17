@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: #1f2937;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(45, 212, 191, 0.17), transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(251, 146, 60, 0.22), transparent 30%),
+    linear-gradient(180deg, #fffdf8, #fff7ed 35%, #fffbeb 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.card-panel {
+  @apply rounded-2xl border border-amber-200 bg-white/90 shadow-panel backdrop-blur;
+}
