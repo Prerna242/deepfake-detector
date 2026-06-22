@@ -83,90 +83,104 @@ export default function DashboardPage() {
   };
 
   return (
-   <div className="flex min-h-screen flex-col bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="flex min-h-screen flex-col bg-slate-50">
       <Navbar />
 
-      <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 md:px-6">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 md:px-6">
+
         {/* Hero Section */}
-        <header className="mb-8 overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 p-8 text-white shadow-2xl dark:shadow-purple-900/20">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <header className="mb-8 overflow-hidden rounded-3xl bg-gradient-to-r from-purple-700 via-violet-600 to-pink-500 p-10 text-white shadow-xl">
+
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
             <div>
-              <h1 className="text-4xl font-bold">
+              <h1 className="text-5xl font-bold">
                 DeepDetect AI
               </h1>
 
-              <p className="mt-3 max-w-xl text-indigo-100">
-                Analyze images using a CNN-powered deepfake
-                detection model. Upload an image and receive
-                authenticity predictions instantly.
+              <p className="mt-4 text-xl text-purple-100">
+                Deepfake Image Detection System
               </p>
 
-              <p className="mt-2 text-sm text-indigo-100">
-                Transfer Learning • TensorFlow • CNN • React
+              <p className="mt-2 text-purple-100">
+                Detect manipulated images using TensorFlow
+                and Deep Learning technology.
               </p>
 
-              <div className="mt-4 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white/20 px-3 py-1 text-sm">
-                  🧠 CNN Model
+              <div className="mt-6 flex flex-wrap gap-3">
+
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm">
+                  🧠 TensorFlow 
                 </span>
 
-                <span className="rounded-full bg-white/20 px-3 py-1 text-sm">
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm">
                   ⚡ Real-Time Analysis
                 </span>
 
-                <span className="rounded-full bg-white/20 px-3 py-1 text-sm">
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm">
                   🔒 Secure Upload
                 </span>
+
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm">
+                  🎯 AI Powered
+                </span>
+
               </div>
             </div>
 
-            <div className="text-right">
-              <p className="text-indigo-100">
-                Logged in as
-              </p>
-
-              <h2 className="text-2xl font-bold">
-                {username}
-              </h2>
+            <div className="hidden md:block">
+              <div className="h-24 w-24 rounded-2xl bg-white/10 backdrop-blur-sm"></div>
             </div>
+
           </div>
+
         </header>
 
         {/* Stats Cards */}
-        {/* Stats Cards */}
-<div className="mb-8 grid gap-4 md:grid-cols-3">
+        <div className="mb-8 grid gap-6 md:grid-cols-4">
 
-  <div className="rounded-2xl bg-white p-5 shadow-lg dark:bg-slate-800 dark:text-white">
-    <p className="text-sm text-slate-500 dark:text-slate-400">
-      Model
-    </p>
+          <div className="rounded-2xl bg-white p-6 shadow-md">
+            <p className="text-slate-500">
+             Detection Engine
+            </p>
 
-    <h3 className="mt-2 text-xl font-bold">
-      CNN
-    </h3>
-  </div>
+            <h3 className="mt-2 text-3xl font-bold">
+             Deep Learning
 
-  <div className="rounded-2xl bg-white p-5 shadow-lg dark:bg-slate-800 dark:text-white">
-    <p className="text-sm text-slate-500 dark:text-slate-400">
-      Accuracy
-    </p>
+            </h3>
+          </div>
 
-    <h3 className="mt-2 text-xl font-bold text-green-600">
-      95%+
-    </h3>
-  </div>
+          <div className="rounded-2xl bg-white p-6 shadow-md">
+            <p className="text-slate-500">
+              Accuracy
+            </p>
 
-  <div className="rounded-2xl bg-white p-5 shadow-lg dark:bg-slate-800 dark:text-white">
-    <p className="text-sm text-slate-500 dark:text-slate-400">
-      Processing
-    </p>
+            <h3 className="mt-2 text-3xl font-bold text-green-600">
+              AI Powered
+            </h3>
+          </div>
 
-    <h3 className="mt-2 text-xl font-bold text-purple-600">
-      {"< 2 sec"}
-    </h3>
-  </div>
+          <div className="rounded-2xl bg-white p-6 shadow-md">
+            <p className="text-slate-500">
+              Processing
+            </p>
 
-</div>
+            <h3 className="mt-2 text-3xl font-bold text-orange-500">
+              {"< 2 sec"}
+            </h3>
+          </div>
+
+          <div className="rounded-2xl bg-white p-6 shadow-md">
+            <p className="text-slate-500">
+              Security
+            </p>
+
+            <h3 className="mt-2 text-3xl font-bold text-purple-600">
+              100%
+            </h3>
+          </div>
+
+        </div>
 
         {!preview && (
           <ImageUploader
@@ -176,6 +190,7 @@ export default function DashboardPage() {
 
         {preview && (
           <section className="space-y-5">
+
             <div className="overflow-hidden rounded-3xl bg-white shadow-xl">
               <img
                 src={preview}
@@ -186,6 +201,7 @@ export default function DashboardPage() {
 
             {!result && (
               <div className="flex flex-col gap-3 sm:flex-row">
+
                 <button
                   className="rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 px-6 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
                   disabled={loading}
@@ -204,17 +220,21 @@ export default function DashboardPage() {
                 >
                   Cancel
                 </button>
+
               </div>
             )}
 
             {loading && (
               <div className="rounded-2xl bg-white p-4 shadow-lg">
+
                 <div className="flex items-center gap-3 text-slate-600">
                   <LoadingSpinner />
+
                   <span>
                     Running AI analysis...
                   </span>
                 </div>
+
               </div>
             )}
 
@@ -231,6 +251,7 @@ export default function DashboardPage() {
                 </button>
               </>
             )}
+
           </section>
         )}
 
@@ -239,23 +260,25 @@ export default function DashboardPage() {
             {error}
           </p>
         )}
+
       </main>
 
       <footer className="mt-10 border-t bg-white py-6">
-        <div className="mx-auto max-w-4xl text-center">
-          <h3 className="font-semibold text-slate-800">
-            DeepDetect AI
-          </h3>
 
-          <p className="mt-1 text-sm text-slate-500">
-            CNN Based Deepfake Image Detection System
+        <div className="mx-auto max-w-6xl text-center">
+
+          <p className="font-semibold text-slate-700">
+            © 2026 DeepDetect AI
           </p>
 
-          <p className="mt-2 text-xs text-slate-400">
-            © 2026 All Rights Reserved
+          <p className="text-sm text-slate-500">
+            TensorFlow CNN Deepfake Detection
           </p>
+
         </div>
+
       </footer>
+
     </div>
   );
 }
